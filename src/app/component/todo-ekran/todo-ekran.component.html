@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-lg-12">
+      <div class="input-group">
+       
+          <button class="btn" type="button" (click)="TodoEkle(todoyaz)">EKLE</button>
+       
+        <input type="text" class="form-control" placeholder="Yapılacak İşlemleri Giriniz ... " #todoyaz>
+      </div>
+    </div>
+    
+   
+  </div>
+
+
+
+<hr>
+
+<table class="wp-table">
+  
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Yapılacaklar</th>
+      <th>Ekleme Tarihi</th>
+      <th>Sil</th>
+    </tr>
+  </thead>
+<tbody>
+    <tr *ngFor="let a of yap; let i = index">  <!– yap dizisi içindeki elemanları döngüye aldım–>
+      <td>{{i+1}}</td>
+      <td>{{ a.text }}</td>     <!– yap dizisi içindeki text depişkenini yazdırdım.–>
+      <td>{{ a.Tarih | date: 'dd.mm.yyyy hh:mm'  }}</td>    <!– yap dizisi içindeki Tarih değişkenini döngüye aldım–>
+      <td><button class="button" (click)="Sil(z)">SİL</button></td>
+    </tr>
+  
+  </tbody>
+  </table>
